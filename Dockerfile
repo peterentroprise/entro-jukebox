@@ -22,7 +22,10 @@ RUN /venv/bin/conda-unpack
 FROM debian:buster AS runtime
 
 COPY --from=build /venv /venv
+COPY ./app /app
 
 SHELL ["/bin/bash", "-c"]
 ENTRYPOINT source /venv/bin/activate && \
-           python -c "import librosa; print('success!')"
+           uvicorn app.main:app --host 0.0.0.0 --port 8080
+
+           

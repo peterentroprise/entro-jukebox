@@ -21,6 +21,8 @@ RUN /venv/bin/conda-unpack
 
 FROM debian:buster AS runtime
 
+RUN apt-get update && apt-get install ssh -y
+
 COPY --from=build /venv /venv
 COPY ./app /app
 

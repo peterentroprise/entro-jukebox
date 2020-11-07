@@ -19,7 +19,7 @@ RUN /venv/bin/conda-unpack
 ### RUNTIME Phase
 ###########################
 
-FROM debian:buster AS runtime
+FROM nvidia/cuda:10.1-runtime AS runtime
 
 RUN apt-get update && apt-get install ssh -y
 

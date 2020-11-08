@@ -31,8 +31,9 @@ def get_world_size():
         return 1
 
 def barrier():
-    if is_available():
-        return _barrier()
+    return
+    #if is_available():
+    #    return _barrier()
     #else: do nothing
 
 def all_gather(tensor_list, tensor):

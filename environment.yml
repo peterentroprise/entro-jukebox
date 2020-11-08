@@ -13,9 +13,9 @@ dependencies:
   - librosa==0.7.2
   - numba==0.48.0
   - ipython=7.18.1
-  - pytorch=1.4
-  - torchvision=0.5
-  - cudatoolkit=10.0
+  - pytorch=1.6.0
+  - torchvision=0.7
+  - cudatoolkit=10.2
   - fastapi=0.61.1
   - uvicorn=0.12.2
   - pydantic=1.7.2

@@ -40,7 +40,7 @@ def calculate_bandwidth(dataset, hps, duration=600):
         idx += max(16, dist.get_world_size())
 
     if dist.is_available():
-        from jukebox.utils.dist_utils import allreduce
+        from app.jukebox.utils.dist_utils import allreduce
         n_seen = allreduce(n_seen)
         total = allreduce(total)
         total_sq = allreduce(total_sq)

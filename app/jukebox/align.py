@@ -98,7 +98,7 @@ def save_alignment(model, device, hps):
     save_html(logdir, data['x'], data['zs'], data['labels'][-1], data['alignments'], hps)
 
 def run(model, port=29500, **kwargs):
-    from jukebox.utils.dist_utils import setup_dist_from_mpi
+    from app.jukebox.utils.dist_utils import setup_dist_from_mpi
     rank, local_rank, device = setup_dist_from_mpi(port=port)
     hps = Hyperparams(**kwargs)
 

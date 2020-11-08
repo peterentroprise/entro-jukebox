@@ -88,9 +88,9 @@ def test_dataset_loader():
     from tqdm import tqdm
     from torch.utils.data import DataLoader
     from torch.utils.data.distributed import DistributedSampler
-    from jukebox.utils.audio_utils import audio_preprocess, audio_postprocess
-    from jukebox.hparams import setup_hparams
-    from jukebox.data.files_dataset import FilesAudioDataset
+    from app.jukebox.utils.audio_utils import audio_preprocess, audio_postprocess
+    from app.jukebox.hparams import setup_hparams
+    from app.jukebox.data.files_dataset import FilesAudioDataset
     hps = setup_hparams("teeny", {})
     hps.sr = 22050  # 44100
     hps.hop_length = 512
@@ -130,7 +130,7 @@ def test_dataset_loader():
         break
 
 if __name__ == '__main__':
-    from jukebox.utils.dist_utils import setup_dist_from_mpi
+    from app.jukebox.utils.dist_utils import setup_dist_from_mpi
     setup_dist_from_mpi(port=29500)
     test_dataset_loader()
 

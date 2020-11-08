@@ -177,7 +177,7 @@ def load_codes(codes_file, duration, priors, hps):
 # Generate and save samples, alignment, and webpage for visualization.
 def save_samples(model, device, hps, sample_hps):
     print(hps)
-    from jukebox.lyricdict import poems, gpt_2_lyrics
+    from app.jukebox.lyricdict import poems, gpt_2_lyrics
     vqvae, priors = make_model(model, device, hps)
 
     assert hps.sample_length//priors[-2].raw_to_tokens >= priors[-2].n_ctx, f"Upsampling needs atleast one ctx in get_z_conds. Please choose a longer sample length"
@@ -267,7 +267,7 @@ def save_samples(model, device, hps, sample_hps):
 
 
 def run(model, mode='ancestral', codes_file=None, audio_file=None, prompt_length_in_seconds=None, port=29500, **kwargs):
-    from jukebox.utils.dist_utils import setup_dist_from_mpi
+    from app.jukebox.utils.dist_utils import setup_dist_from_mpi
     rank, local_rank, device = setup_dist_from_mpi(port=port)
     hps = Hyperparams(**kwargs)
     sample_hps = Hyperparams(dict(mode=mode, codes_file=codes_file, audio_file=audio_file, prompt_length_in_seconds=prompt_length_in_seconds))

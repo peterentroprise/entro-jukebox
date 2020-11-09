@@ -19,3 +19,4 @@ dependencies:
   - fastapi=0.61.1
   - uvicorn=0.12.2
   - pydantic=1.7.2
+  - watchgod=0.6

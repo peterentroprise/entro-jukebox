@@ -8,3 +8,7 @@ class ModelName(str, Enum):
 
 class GenerateRequest(BaseModel):
       model: ModelName
+      sample_length_in_seconds: int
+      artist: str
+      genre: str
+      lyrics: str

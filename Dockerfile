@@ -28,4 +28,4 @@ COPY ./app /app
 
 SHELL ["/bin/bash", "-c"]
 ENTRYPOINT source /venv/bin/activate && \
-           uvicorn app.main:app --host 0.0.0.0 --port 8080
+           uvicorn app.main:app --reload --host 0.0.0.0 --port 8080

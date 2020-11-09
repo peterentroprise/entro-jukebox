@@ -292,7 +292,7 @@ def train(model, orig_model, opt, shd, scalar, ema, logger, metrics, data_proces
     return {key: metrics.avg(key) for key in _metrics.keys()}
 
 def run(hps="teeny", port=29500, **kwargs):
-    from jukebox.utils.dist_utils import setup_dist_from_mpi
+    from app.jukebox.utils.dist_utils import setup_dist_from_mpi
     rank, local_rank, device = setup_dist_from_mpi(port=port)
     hps = setup_hparams(hps, kwargs)
     hps.ngpus = dist.get_world_size()

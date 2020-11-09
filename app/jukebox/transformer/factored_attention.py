@@ -489,7 +489,7 @@ class FactoredAttention(nn.Module):
 
 
 if __name__ == '__main__':
-    from jukebox.utils.dist_utils import setup_dist_from_mpi
+    from app.jukebox.utils.dist_utils import setup_dist_from_mpi
     setup_dist_from_mpi(port=29600)
     n_in = 16
     n_state = n_in * 2
